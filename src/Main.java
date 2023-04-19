@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.stream.IntStream;
 
 public class Main {
 
@@ -39,13 +40,10 @@ public class Main {
 
     private static void task3() {
         int[] expensesArray = generateRandomArray();
-        double expensesMed = 0;
-
-        for (int expenses: expensesArray) {
-            expensesMed += expenses;
-            expensesMed = expensesMed / 30;
-            System.out.println("средние затраты за месяц " + expensesMed);
-        }
+        int mid = 0;
+        mid = Arrays.stream(expensesArray).sum();
+        mid = mid / 30;
+        System.out.println("Средние затраты за месяц " + mid);
 
         System.out.println("Задача 4");
 
